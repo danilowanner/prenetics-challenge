@@ -1,6 +1,7 @@
 .modal.login-modal .content-wrapper{
   max-width: 26rem;
 }
-.modal.login-modal .field {
-
+.modal.login-modal input[type="submit"] {
+  display: block;
+  margin: 0 auto;
 }

@@ -27,7 +27,8 @@
   text-decoration: none;
   margin-left: 1.4rem;
 }
-.menu-bar nav a {
+.menu-bar nav a,
+.menu-bar nav button {
   cursor: pointer;
 }
 .menu-bar nav a.highlight {
@@ -43,10 +44,14 @@
   color: #fff;
   padding: 0.2em 0.8em;
 }
-.menu-bar nav .button:focus {
+.menu-bar nav .button:focus,
+.menu-bar nav .button:hover {
+  background-color: rgb(0, 159, 141);
   outline: none;
-  opacity: 0.8;
 }
 .menu-bar nav .button.logout-button {
   background-color: #777;
+}
+.menu-bar nav .button.logout-button:hover {
+  background-color: #555;
 }
