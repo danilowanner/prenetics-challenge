@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Reflux, { Component } from 'reflux';
 import Actions from '../stores/Actions';
+import AuthStore from '../stores/AuthStore';
 import './LoginModal.css';
 
 class LoginModal extends Component {
@@ -9,6 +11,7 @@ class LoginModal extends Component {
       username: '',
       password: ''
     };
+    this.store = AuthStore;
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,19 +33,21 @@ class LoginModal extends Component {
   }
 
   render() {
+    const fieldClass = this.state.loginInvalid ? "field error" : "field";
+
     return (
       <div className="modal login-modal">
         <div className="content-wrapper">
           <h2>Login</h2>
           <form onSubmit={this.handleSubmit}>
-            <div className="field">
+            <div className={fieldClass}>
               <label>Username</label>
               <input
                 type="text"
                 name="username"
                 onChange={this.handleInputChange} />
             </div>
-            <div className="field">
+            <div className={fieldClass}>
               <label>Password</label>
               <input
                 type="password"
@@ -51,6 +56,14 @@ class LoginModal extends Component {
             </div>
             <input type="submit" value="Submit" />
           </form>
+          {
+            !this.state.loginInvalid ?
+              []
+              :
+              <div className="error-message">
+                Login failed. Verify your input
+              </div>
+          }
         </div>
       </div>
     );

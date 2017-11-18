@@ -70,6 +70,12 @@ body {
   text-align: center;
   margin: 0 0 1rem 0;
 }
+.modal .error-message {
+  background-color: #c33;
+  color: #fff;
+  margin: 2rem -2rem -2rem -2rem;
+  padding: 1rem 2rem;
+}
 
 /* Generic Button styling */
 .btn,
@@ -136,4 +142,11 @@ input[type="submit"]:hover {
 }
 form .field {
   margin-bottom: 0.8rem;
+}
+form .field.error label {
+  color: #b00;
+}
+form .field.error input[type="text"],
+form .field.error input[type="password"] {
+  border-color: #b00;
 }
