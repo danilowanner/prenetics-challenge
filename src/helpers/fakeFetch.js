@@ -25,16 +25,19 @@ function getFakeResponseByPath(path, payload) {
         "dob": "string"
       };
 
-    case "/customer/{customerId}/report":
-      return {
-        "url": "string",
-      }
-
     case "/customer/{customerId}/genetic":
       return [
         {
-          "name": "string",
-          "symbol": "string"
+          "name": "Type 2 Diabetes",
+          "symbol": "low risk"
+        },
+        {
+          "name": "High Blood Pressure",
+          "symbol": "elevated risk"
+        },
+        {
+          "name": "High Cholesterol",
+          "symbol": "elevated risk"
         }
       ]
 

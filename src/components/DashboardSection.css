@@ -1,13 +1,15 @@
 .dashboard-section {
+  box-sizing: border-box;
+  height: 80vh;
+  min-height: 10rem;
+  padding: 4rem 0;
+  position: relative;
+  
   background-image: url('../assets/images/family.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  height: 80vh;
-  min-height: 10rem;
-  padding: 3rem 0;
-  position: relative;
 }
 .dashboard-img-fade {
   position: absolute;
@@ -19,7 +21,19 @@
 .dashboard-section h1 {
   font-size: 2.6rem;
   line-height: 120%;
-  margin: 0 0 1.6rem 0;
+  margin: 0 0 2rem 0;
   text-align: center;
   text-shadow: 0 0 16px rgba(0,0,0,0.3)
+}
+.dashboard-section .personal-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.dashboard-section .personal-details > li{
+  margin: 0 0 0.5rem 0;
+}
+.dashboard-section .personal-details > li strong {
+  display: block;
 }

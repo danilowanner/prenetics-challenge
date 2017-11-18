@@ -10,7 +10,8 @@ class AuthStore extends Reflux.Store
     this.state = {
       loggedIn: false,
       loginInvalid: false,
-      username: ""
+      user: {},
+      genetic: [],
     };
     this.listenTo(Actions.login, this.onLogin);
     this.listenTo(Actions.logout, this.onLogout);
@@ -34,6 +35,8 @@ class AuthStore extends Reflux.Store
           });
           Actions.closeLoginModal();
           Actions.navToDashboard();
+          this.loadUserData();
+          this.loadGeneticData();
         }
         else {
           this.setState({
@@ -44,9 +47,30 @@ class AuthStore extends Reflux.Store
   }
   onLogout()
   {
+    // API call to '/customer/logout' would go here
+    // Using a mock function which returns the appropriate response
     fakeFetch('/customer/logout')
       .then(value => {
         this.setState({loggedIn: false});
+        Actions.navToHome();
+      });
+  }
+  loadUserData()
+  {
+    // API call to '/customer/{customerId}/user' would go here
+    // Using a mock function which returns the appropriate response
+    fakeFetch('/customer/{customerId}/user')
+      .then(value => {
+        this.setState({user: value});
+      });
+  }
+  loadGeneticData()
+  {
+    // API call to '/customer/{customerId}/user' would go here
+    // Using a mock function which returns the appropriate response
+    fakeFetch('/customer/{customerId}/genetic')
+      .then(value => {
+        this.setState({genetic: value});
       });
   }
 }

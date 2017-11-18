@@ -6,9 +6,7 @@ const Actions = Reflux.createActions([
   "login",
   "logout",
   "navToDashboard",
-  "navToHome",
-  "downloadReport",
-  "viewResults"
+  "navToHome"
 ]);
 
 export default Actions

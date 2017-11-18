@@ -1,0 +1,13 @@
+.genetic-results {
+  width: 100%;
+}
+.genetic-results .result {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.genetic-results .result .name {
+  font-weight: bold;
+}
+.genetic-results .result .symbol {
+}
