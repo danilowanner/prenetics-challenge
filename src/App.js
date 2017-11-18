@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import 'normalize.css';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>Prenetics Challenge</h1>
-        </header>
+        <Header />
+        <HeroSection />
       </div>
     );
   }

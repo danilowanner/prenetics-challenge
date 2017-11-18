@@ -1,3 +1,49 @@
+@font-face {
+    font-family: 'Gotham Rounded';
+    src: url('./assets/fonts/GothamRoundedBook.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Gotham Rounded';
+    font-weight: bold;
+    src: url('./assets/fonts/GothamRoundedMedium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Aleo Bold';
+    src: url('./assets/fonts/AleoBold.otf') format('opentype');
+}
+
+body {
+  color: #777;
+  font-size: 15px;
+  font-family: 'Gotham Rounded', 'Arial Rounded MT', sans-serif;
+  font-weight: normal;
+  line-height: 21px;
+  -webkit-font-smoothing: antialiased;
+}
+
 .App {
-  text-align: center;
+}
+
+.content-wrapper {
+  margin: 0 auto;
+  position: relative;
+  width: 68rem;
+}
+
+.developed-by {
+  font-size: 0.8rem;
+}
+.developed-by .lead {
+  font-size: 1em;
+  margin: 0;
+}
+.developed-by .prenetics {
+  font-family: 'Aleo Bold', sans-serif;
+  font-size: 2.4em;
+  margin: 0;
+}
+.developed-by .prenetics sup{
+  font-size: 0.5em;
 }

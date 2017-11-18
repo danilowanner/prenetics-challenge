@@ -1,0 +1,26 @@
+.menu-bar {
+  background-color: #fff;
+  height: 4.4rem;
+}
+.menu-bar .content-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.menu-bar .logos .logo {
+  height: 1.8rem;
+  margin-right: 2rem;
+  margin-top: 0.2rem;
+}
+.menu-bar .logos .logo:last-child {
+  margin-right: 0;
+}
+.menu-bar nav {
+  margin-left: auto;
+}
+.menu-bar nav a{
+  color: #777;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 1.4rem;
+}
