@@ -1,5 +1,5 @@
 import React from 'react';
-import Reflux, { Component } from 'reflux';
+import { Component } from 'reflux';
 import Actions from '../stores/Actions';
 import AuthStore from '../stores/AuthStore';
 import './LoginModal.css';

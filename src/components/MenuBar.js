@@ -1,5 +1,5 @@
 import React from 'react';
-import Reflux, { Component } from 'reflux';
+import { Component } from 'reflux';
 import Actions from '../stores/Actions';
 import AuthStore from '../stores/AuthStore';
 import './MenuBar.css';
@@ -29,12 +29,12 @@ class MenuBar extends Component {
             {
               this.state.loggedIn ?
                 [
-                  <a className="highlight" onClick={Actions.navToDashboard}>Dashboard</a>,
+                  <a className="highlight" onClick={Actions.navToDashboard} key="Dashboard">Dashboard</a>,
                   this.renderLogoutButton()
                 ]
                 :
                 [
-                  <a onClick={Actions.navToHome}>Register</a>,
+                  <a onClick={Actions.navToHome} key="Register">Register</a>,
                   this.renderLoginButton()
                 ]
             }
@@ -46,7 +46,7 @@ class MenuBar extends Component {
 
   renderLoginButton() {
     return (
-      <button className="button login-button" onClick={Actions.openLoginModal}>
+      <button className="button login-button" onClick={Actions.openLoginModal} key="Login">
         Login
       </button>
     )
@@ -54,7 +54,7 @@ class MenuBar extends Component {
 
   renderLogoutButton() {
     return (
-      <button className="button logout-button" onClick={Actions.logout}>
+      <button className="button logout-button" onClick={Actions.logout} key="Logout">
         Logout
       </button>
     )

@@ -1,5 +1,5 @@
 import React from 'react';
-import Reflux, { Component } from 'reflux';
+import { Component } from 'reflux';
 import NavStore from './stores/NavStore';
 import MenuBar from './components/MenuBar';
 import HeroSection from './components/HeroSection';
@@ -35,7 +35,6 @@ class App extends Component {
         return (
           <HeroSection />
         )
-        break;
       case "DASHBOARD":
         return (
           <DashboardSection />
