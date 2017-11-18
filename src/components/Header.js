@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Reflux, { Component } from 'reflux';
+import Actions from '../stores/Actions';
+import AuthStore from '../stores/AuthStore';
 import './Header.css';
 
 import logoMydna from '../assets/images/logo.png';
 import logoPru from '../assets/images/logo-pru.png';
 
 class Header extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {};
+      this.store = AuthStore;
+  }
+
   render() {
     return (
       <header className="menu-bar">
@@ -18,10 +27,30 @@ class Header extends Component {
             <a href="/how-it-works/">How It Works</a>
             <a href="/kit/">Get Kit</a>
             <a href="/register/">Register</a>
+            {
+              !this.state.loggedIn ?
+                this.renderLoginButton() : this.renderLogoutButton()
+            }
           </nav>
         </div>
       </header>
     );
+  }
+
+  renderLoginButton() {
+    return (
+      <button className="login-button" onClick={Actions.login}>
+        Login
+      </button>
+    )
+  }
+
+  renderLogoutButton() {
+    return (
+      <button className="logout-button" onClick={Actions.logout}>
+        Logout
+      </button>
+    )
   }
 }
 
