@@ -39,7 +39,7 @@ class MenuBar extends Component {
 
   renderLoginButton() {
     return (
-      <button className="login-button" onClick={Actions.login}>
+      <button className="button login-button" onClick={Actions.openLoginModal}>
         Login
       </button>
     )
@@ -47,7 +47,7 @@ class MenuBar extends Component {
 
   renderLogoutButton() {
     return (
-      <button className="logout-button" onClick={Actions.logout}>
+      <button className="button logout-button" onClick={Actions.logout}>
         Logout
       </button>
     )

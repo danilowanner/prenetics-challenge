@@ -1,5 +1,6 @@
 import Reflux from 'reflux';
 import Actions from './Actions';
+import fakeFetch from '../helpers/fakeFetch';
 
 class AuthStore extends Reflux.Store
 {
@@ -8,19 +9,44 @@ class AuthStore extends Reflux.Store
     super();
     this.state = {
       loggedIn: false,
+      loginInvalid: false,
       username: ""
     };
     this.listenTo(Actions.login, this.onLogin);
     this.listenTo(Actions.logout, this.onLogout);
   }
 
-  onLogin(credentials)
+  onLogin(username, password)
   {
-    this.setState({loggedIn: true});
+    const payload = {
+      username: username,
+      password: password,
+    }
+    // API call to '/customer/login' would go here
+    // Using a mock function which returns the appropriate response
+    fakeFetch('/customer/login', payload)
+      .then(value => {
+        if(value.token !== undefined) {
+          this.setState({
+            loggedIn: true,
+            loginInvalid: false,
+            token: value.token
+          });
+          Actions.closeLoginModal();
+        }
+        else {
+          this.setState({
+            loginInvalid: true
+          });
+        }
+      });
   }
-  onLogout(credentials)
+  onLogout()
   {
-    this.setState({loggedIn: false});
+    fakeFetch('/customer/logout')
+      .then(value => {
+        this.setState({loggedIn: false});
+      });
   }
 }
 

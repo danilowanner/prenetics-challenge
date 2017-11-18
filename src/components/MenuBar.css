@@ -18,9 +18,23 @@
 .menu-bar nav {
   margin-left: auto;
 }
-.menu-bar nav a{
+.menu-bar nav > *{
   color: #777;
   font-weight: bold;
   text-decoration: none;
   margin-left: 1.4rem;
+}
+.menu-bar nav .button {
+  background-color: rgb(0, 179, 161);
+  border: none;
+  border-radius: 1em;
+  color: #fff;
+  padding: 0.2em 0.8em;
+}
+.menu-bar nav .button:focus {
+  outline: none;
+  opacity: 0.8;
+}
+.menu-bar nav .button.logout-button {
+  background-color: #777;
 }

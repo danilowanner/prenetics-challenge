@@ -32,6 +32,7 @@ body {
   width: 68rem;
 }
 
+/* Styles for "developed by Prenetics" logotype */
 .developed-by {
   font-size: 0.8rem;
 }
@@ -46,4 +47,42 @@ body {
 }
 .developed-by .prenetics sup{
   font-size: 0.5em;
+}
+
+/* Generic Modal styling */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+
+  background-color: rgba(0,0,0,0.3);
+}
+.modal .content-wrapper {
+  background-color: #fff;
+  max-width: 40rem;
+  padding: 2rem;
+  box-shadow: 2px 2px 32px rgba(0,0,0,0.6);
+}
+.modal h2 {
+  color: rgb(0, 179, 161);
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+/* Generic Form styling */
+label {
+  display: block;
+}
+input[type="text"],
+input[type="password"] {
+  box-sizing: border-box;
+  display: block;
+  padding: 0.4rem;
+  width: 100%;
+}
+input[type="submit"] {
+  background-color: rgb(0, 179, 161);
+  color: #fff;
 }
