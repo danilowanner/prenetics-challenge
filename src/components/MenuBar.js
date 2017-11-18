@@ -26,14 +26,17 @@ class MenuBar extends Component {
             <a onClick={Actions.navToHome}>About</a>
             <a onClick={Actions.navToHome}>How It Works</a>
             <a onClick={Actions.navToHome}>Get Kit</a>
-            <a onClick={Actions.navToHome}>Register</a>
             {
               this.state.loggedIn ?
                 [
                   <a className="highlight" onClick={Actions.navToDashboard}>Dashboard</a>,
                   this.renderLogoutButton()
                 ]
-                : this.renderLoginButton()
+                :
+                [
+                  <a onClick={Actions.navToHome}>Register</a>,
+                  this.renderLoginButton()
+                ]
             }
           </nav>
         </div>
