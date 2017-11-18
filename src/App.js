@@ -3,6 +3,7 @@ import Reflux, { Component } from 'reflux';
 import NavStore from './stores/NavStore';
 import MenuBar from './components/MenuBar';
 import HeroSection from './components/HeroSection';
+import DashboardSection from './components/DashboardSection';
 import LoginModal from './components/LoginModal';
 import 'normalize.css';
 import './App.css';
@@ -18,12 +19,30 @@ class App extends Component {
     return (
       <div className="App">
         <MenuBar />
-        <HeroSection />
+        {
+          this.renderView(this.state.view)
+        }
         {
           this.state.modals.map(this.renderModal)
         }
       </div>
     );
+  }
+
+  renderView(name) {
+    switch(name) {
+      case "HOME":
+        return (
+          <HeroSection />
+        )
+        break;
+      case "DASHBOARD":
+        return (
+          <DashboardSection />
+        )
+      default:
+        console.log(`View ${name} not found`);
+    }
   }
 
   renderModal(name) {

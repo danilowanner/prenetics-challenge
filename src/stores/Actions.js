@@ -5,6 +5,8 @@ const Actions = Reflux.createActions([
   "closeLoginModal",
   "login",
   "logout",
+  "navToDashboard",
+  "navToHome",
   "downloadReport",
   "viewResults"
 ]);

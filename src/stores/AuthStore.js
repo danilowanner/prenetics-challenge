@@ -33,6 +33,7 @@ class AuthStore extends Reflux.Store
             token: value.token
           });
           Actions.closeLoginModal();
+          Actions.navToDashboard();
         }
         else {
           this.setState({
