@@ -17,6 +17,28 @@ function getFakeResponseByPath(path, payload) {
     case "/customer/logout":
       return {};
 
+    case "/customer/{customerId}/user":
+      return {
+        "firstname": "John",
+        "lastname": "Doe",
+        "email": "john.doe@gmail.com",
+        "dob": "string"
+      };
+
+    case "/customer/{customerId}/report":
+      return {
+        "url": "string",
+      }
+
+    case "/customer/{customerId}/genetic":
+      return [
+        {
+          "name": "string",
+          "symbol": "string"
+        }
+      ]
+
+    default:
   }
   console.log(`No fake response found for path ${path}`);
 }
