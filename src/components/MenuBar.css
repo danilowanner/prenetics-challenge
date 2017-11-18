@@ -7,6 +7,9 @@
   align-items: center;
   height: 100%;
 }
+.menu-bar a.logos {
+  cursor: pointer;
+}
 .menu-bar .logos .logo {
   height: 1.8rem;
   margin-right: 2rem;
@@ -23,6 +26,15 @@
   font-weight: bold;
   text-decoration: none;
   margin-left: 1.4rem;
+}
+.menu-bar nav a {
+  cursor: pointer;
+}
+.menu-bar nav a.highlight {
+  color: rgb(0, 179, 161);
+}
+.menu-bar nav a:hover {
+  color: #333;
 }
 .menu-bar nav .button {
   background-color: rgb(0, 179, 161);

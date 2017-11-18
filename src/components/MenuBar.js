@@ -18,18 +18,22 @@ class MenuBar extends Component {
     return (
       <header className="menu-bar">
         <div className="content-wrapper">
-          <div className="logos">
+          <a className="logos" onClick={Actions.navToHome}>
             <img className="logo logo-mydnapro" src={logoMydna} alt="myDNA Pro Logo" />
             <img className="logo logo-prudential" src={logoPru} alt="Prudential Logo" />
-          </div>
+          </a>
           <nav id="main-nav">
-            <a href="/about/">About</a>
-            <a href="/how-it-works/">How It Works</a>
-            <a href="/kit/">Get Kit</a>
-            <a href="/register/">Register</a>
+            <a onClick={Actions.navToHome}>About</a>
+            <a onClick={Actions.navToHome}>How It Works</a>
+            <a onClick={Actions.navToHome}>Get Kit</a>
+            <a onClick={Actions.navToHome}>Register</a>
             {
-              !this.state.loggedIn ?
-                this.renderLoginButton() : this.renderLogoutButton()
+              this.state.loggedIn ?
+                [
+                  <a className="highlight" onClick={Actions.navToDashboard}>Dashboard</a>,
+                  this.renderLogoutButton()
+                ]
+                : this.renderLoginButton()
             }
           </nav>
         </div>
