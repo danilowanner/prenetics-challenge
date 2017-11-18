@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
+import MenuBar from './components/MenuBar';
 import HeroSection from './components/HeroSection';
 import 'normalize.css';
 import './App.css';
@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <MenuBar />
         <HeroSection />
       </div>
     );

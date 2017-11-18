@@ -2,12 +2,12 @@ import React from 'react';
 import Reflux, { Component } from 'reflux';
 import Actions from '../stores/Actions';
 import AuthStore from '../stores/AuthStore';
-import './Header.css';
+import './MenuBar.css';
 
 import logoMydna from '../assets/images/logo.png';
 import logoPru from '../assets/images/logo-pru.png';
 
-class Header extends Component {
+class MenuBar extends Component {
   constructor(props) {
       super(props);
       this.state = {};
@@ -54,4 +54,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default MenuBar;
